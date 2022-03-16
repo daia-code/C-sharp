@@ -1,0 +1,45 @@
+using L3;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace app1
+{
+    class ProduseMgr
+    {
+        private Produs[] produse = new Produs[100];
+        private int nrProduse = 0;
+
+        public ProduseMgr()
+        {
+        }
+        public ProduseMgr(Produs[] produse, int nrProduse)
+        {
+            this.produse = produse;
+            this.nrProduse = nrProduse;
+        }
+
+      
+        public ProduseMgr ReadProduse( int nrProduse)
+        {
+            Produs[] produse = new Produs[nrProduse];
+            for(int i = 0; i < nrProduse; i++)
+            {
+                Console.WriteLine("Introdu un produs");
+                Console.Write("Numele:");
+                String nume = Console.ReadLine();
+                Console.Write("Codul intern:");
+                String CodIntern = Console.ReadLine();
+                Console.Write("Producator :");
+                String producator = Console.ReadLine();
+                produse[i] = new Produs(i, nume, CodIntern, producator);
+            }
+            ProduseMgr produseMgr = new ProduseMgr(produse, nrProduse);
+            return produseMgr;
+       
+        }
+     
+    }
+}
