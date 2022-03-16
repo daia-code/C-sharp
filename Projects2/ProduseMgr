@@ -9,11 +9,13 @@ namespace app1
 {
     class ProduseMgr
     {
-        private Produs[] produse = new Produs[100];
-        private int nrProduse = 0;
+        private Produs[] produse;
+        private int nrProduse ;
 
         public ProduseMgr()
         {
+            this.produse = new Produs[100];
+            this.nrProduse = 0;
         }
         public ProduseMgr(Produs[] produse, int nrProduse)
         {
@@ -24,7 +26,7 @@ namespace app1
       
         public ProduseMgr ReadProduse( int nrProduse)
         {
-            Produs[] produse = new Produs[nrProduse];
+            
             for(int i = 0; i < nrProduse; i++)
             {
                 Console.WriteLine("Introdu un produs");
@@ -40,6 +42,7 @@ namespace app1
             return produseMgr;
        
         }
+        //public void WriteProduse
      
     }
 }
