@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace L3
+{
+    public abstract class ProdusAbstract
+    {
+        private long Id;
+        private String Nume;
+        private String CodIntern;
+
+        public ProdusAbstract(long unId, string unNume, string unCodIntern)
+        {
+            this.Id = unId;
+            this.Nume = unNume;
+            this.CodIntern = unCodIntern;
+        }
+        public abstract String Descriere();
+        public virtual String AltaDescriere()
+        {
+            return "[" + Id + "]: " + Nume
+            + " cod intern :[" + CodIntern + "] ";
+        }
+    }
+}
