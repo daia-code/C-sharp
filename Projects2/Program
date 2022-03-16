@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using L3;
+
+namespace app1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nr. produse:");
+            int nrProduse =
+            int.Parse(Console.ReadLine());
+            ProduseMgr mgrProdus;
+            ProduseMgr produseMgr2=new ProduseMgr();
+            mgrProdus=produseMgr2.ReadProduse(nrProduse);
+
+            
+
+        }
+    }
+}
