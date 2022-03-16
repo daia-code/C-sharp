@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace L3
+{
+    public class Serviciu : ProdusAbstract
+    {
+        private long Id;
+        private String Nume;
+        private String CodIntern;
+        public Serviciu(long unId, String unNume, String unCodIntern) : base(unId, unNume, unCodIntern)
+        {
+            
+        }
+        public override String Descriere()
+        {
+            return "Produsul [" + Id + "]: " + Nume+ " cod intern :[" + CodIntern + "] ";
+        }
+        public virtual String AltaDescriere()
+        {
+            return "[" + Id + "]: " + Nume  + " cod intern :[" + CodIntern + "] ";
+        }
+
+    }
+}
