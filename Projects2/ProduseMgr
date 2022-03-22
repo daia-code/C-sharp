@@ -42,7 +42,12 @@ namespace app1
             return produseMgr;
        
         }
-        //public void WriteProduse
+        //public void WriteProduse()
+        { for(int i = 0; i < nrProduse; i++)
+            {
+        Console.WriteLine(i+"  "+produse[i].Nume+"  "+produse[i].CodIntern+" "+produse[i].producator);
+        {
+        }
      
     }
 }
