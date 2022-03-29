@@ -1,92 +1,67 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace ConsoleApplication1
+namespace ConsoleApp1
 {
     internal class Program
     {
         public static void Main(string[] args)
         {
-            int option, nr = 0;
+            int option, nr = 0,find=0;
+            Menu menu = new Menu();
             Student[] students = new Student[100];
             do
             {
-                Console.WriteLine("Menu");
-                Console.WriteLine("1.Add a new student");
-                Console.WriteLine("2.Delete a student");
-                Console.WriteLine("3.Change data about studing");
-                Console.WriteLine("4.View students");
+                menu.View();
                 Console.Write("Enter your option:");
                 option = Int32.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
-                if (option == 1)
+                Console.WriteLine();
+                switch (option)
                 {
-                    Console.WriteLine("Enter name of student:");
-                    String name = Console.ReadLine();
-                    Console.WriteLine("Enter the address:");
-                    String address = Console.ReadLine();
-                    Console.WriteLine("Enter the faculty:");
-                    String faculty = Console.ReadLine();
-                    Console.WriteLine("Enter the degree subject:");
-                    String degree = Console.ReadLine();
-                    Console.WriteLine("Enter the year of study:");
-                    int year = Int16.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
-                    DataStudy dataStudy = new DataStudy(faculty, degree, year);
-                    students[nr] = new Student(name, address, dataStudy);
-                    nr++;
-                }
-                else if (option == 2)
-                {
-                    Console.WriteLine("Enter name of student:");
-                        String name = Console.ReadLine();
-                        for (int j = 0; j < students.Length; j++)
+                    case 1:
                         {
-                            if (students[j]==null)
-                            {
-                                continue;
-                            }
-                            String studName = students[j].Name;
-                            if (String.Equals(name,studName))
-                            {
-                                students[j] = null;
-                                break;
-
-
-                            }
-                           
-                            
-                        }
-                        break;
-
-                }
-                else if (option == 3)
-                {
-                    Console.WriteLine("Enter name of student:");
-                    String name = Console.ReadLine();
-                    for (int j = 0; j < students.Length; j++)
-                    {
-                        String studName = students[j].Name;
-                        if (String.Equals(name,studName )){
-                            students[j].DataStudy = students[j].NewDataStudy();
+                          
+                            students[nr] = menu.AddStudent();
+                            nr++;
                             break;
-
                         }
-                    }
-                    break;
-                    
-                }else if (option == 4)
-                {
-                    foreach (Student student in students)
-                    {
-                        if (student==null)
+                    case 2:
                         {
-                            continue;
+
+                            Console.WriteLine("Enter name of student:");
+                            String name = Console.ReadLine();
+                            for (int j = 0; j < students.Length; j++)
+                            {
+                                String studName = students[j].Name;
+                                if (String.Equals(name, studName))
+                                {
+                                    Console.WriteLine("We find the student!");
+                                    students[j].DataStudy = students[j].NewDataStudy();
+                                    find++;
+                                    break;
+
+                                }
+                            }
+                            if (find==0)
+                            {
+                                Console.WriteLine("We don't have a student with name " + name + " !");
+                            }
+                            break;
                         }
-                        student.Describe();
-                        
-                    }
+                    case 3:
+                        { Student student = new Student();
+                            student.StudView(students);
+                            break;
+                        }
 
                 }
                 Console.WriteLine();
+
+
+                
             } while (option != 0);
         }
     }
