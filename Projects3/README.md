@@ -1,0 +1,1 @@
+# Student management - basic version
