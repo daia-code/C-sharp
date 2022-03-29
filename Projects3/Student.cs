@@ -1,14 +1,23 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace ConsoleApp1
 {
+
     public class Student
     {
 
         private String _name;
         private String _address;
         private DataStudy _dataStudy;
-        
+
+        public Student()
+        {
+
+        }
         public Student(string name, string address, DataStudy dataStudy)
         {
             this._name = name;
@@ -17,11 +26,11 @@ namespace ConsoleApplication1
         }
         public string Name
         {
-            get => _name ;
+            get => _name;
             set => _name = value;
         }
 
-    
+
 
         public string Address
         {
@@ -37,10 +46,11 @@ namespace ConsoleApplication1
 
         public void Describe()
         {
-          Console.WriteLine("First name:"+Name+" address:"+Address+".Faculty:"+DataStudy.Faculty+" Degree subject:"+DataStudy.Degree+" year:"+DataStudy.Year);  
-           
+            Console.WriteLine("name:" + Name + " | Address:" + Address + "| Faculty:" + DataStudy.Faculty + " | Degree subject:" + DataStudy.Degree + " |Year:" + DataStudy.Year);
+
+
         }
-      
+
         public DataStudy NewDataStudy()
         {
             Console.WriteLine("Enter the faculty:");
@@ -53,6 +63,18 @@ namespace ConsoleApplication1
             return dataStudy;
 
         }
-        
+        public void StudView(Student[] students)
+        {
+            foreach (Student student in students)
+            {
+                if (student == null)
+                {
+                    continue;
+                }
+                student.Describe();
+
+            }
+
+        }
     }
 }
