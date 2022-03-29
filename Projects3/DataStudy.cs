@@ -1,8 +1,14 @@
 using System;
-namespace ConsoleApplication1
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
 {
     public class DataStudy
     {
+
         private String _faculty;
         private String _degree;
         private int _year;
@@ -31,9 +37,8 @@ namespace ConsoleApplication1
             set => _year = value;
         }
 
-      
-        
 
-     
+
     }
 }
+
