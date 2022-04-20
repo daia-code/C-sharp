@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    public class Serviciu : ProdusAbstract, IPackageble
+    {
+
+        public Serviciu(long unId, String unNume, String unCodIntern, double unPret, String oCategorie) : base(unId, unNume, unCodIntern, unPret, oCategorie)
+        {
+
+        }
+        public override String Descriere()
+        {
+            return "Id [" + Id1 + "]: " + Nume1 + " cod intern :[" + CodIntern1 + "] " + " Pret:" + Pret1 + " Categorie:" + Categorie1;
+
+        }
+        public override String AltaDescriere()
+        {
+            return "Id [" + Id1 + "]: " + Nume1 + " cod intern :[" + CodIntern1 + "] " + " Pret:" + Pret1 + " Categorie:" + Categorie1;
+        }
+
+        public bool canAddToPackage(Pachet pachet)
+        {
+
+            return true;
+
+
+        }
+    }
+}
