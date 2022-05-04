@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<produse>
+<Produs>
+    <Nume>Calculator</Nume>
+    <CodIntern>157235</CodIntern>
+    <Producator>USA</Producator>
+    <Pret>1500</Pret>
+    <Categorie>Tehnologia Informatiei</Categorie>
+  </Produs>
+ <Produs>
+    <Nume>Laptop</Nume>
+    <CodIntern>157237</CodIntern>
+    <Producator>Canada</Producator>
+    <Pret>5200</Pret>
+    <Categorie>Tehnologia Informatiei</Categorie>
+ </Produs>
+  <Produs>
+    <Nume>Mouse</Nume>
+    <CodIntern>157240</CodIntern>
+    <Producator>UK</Producator>
+    <Pret>3000</Pret>
+    <Categorie>Tehnologia Informatiei</Categorie>
+  </Produs>
+<Serviciu>
+    <Nume>Reparare computer</Nume>
+    <CodIntern>157240</CodIntern>
+    <Pret>1000</Pret>
+    <Categorie>Tehnologia Informatiei</Categorie>
+  </Serviciu>
+ </produse>
